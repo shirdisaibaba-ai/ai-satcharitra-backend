@@ -82,7 +82,7 @@ class AdminLogin(BaseModel):
 def read_root():
     return {"message": "Sai Satcharitra API - Temporary In-Memory Version", "status": "running"}
 
-@app.post("/api/init-data")
+@app.get("/api/init-data")
 def init_data():
     initialize_data()
     return {"message": "Data initialized successfully", "chapters": len(chapters_db), "quotes": len(quotes_db)}
